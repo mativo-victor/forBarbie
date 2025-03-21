@@ -1,0 +1,124 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    color: white;
+}
+
+/* 3D Background */
+#3d-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Main Menu */
+.main-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s ease-in forwards;
+}
+
+.main-menu h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #FF1493;
+    text-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4;
+}
+
+.main-menu button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: #FF1493;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.main-menu button:hover {
+    background-color: #FF69B4;
+    transform: scale(1.1);
+}
+
+.main-menu button:active {
+    transform: scale(0.9);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Game Section */
+.game-section, .rizz-notes-section, .explore-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.game-section.hidden, .rizz-notes-section.hidden, .explore-section.hidden {
+    display: none;
+}
+
+#game-area, #explore-area {
+    width: 400px;
+    height: 300px;
+    background: rgba(255, 20, 147, 0.1);
+    border: 2px solid #FF1493;
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.heart, .magic {
+    position: absolute;
+    font-size: 24px;
+    color: #FF1493;
+    cursor: pointer;
+    animation: float 2s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+#score {
+    font-size: 20px;
+    margin: 10px 0 0;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #FF1493;
+    opacity: 0;
+    transition: opacity 2s;
+    font-size: 18px;
+}
+
+footer.visible {
+    opacity: 1;
+}
